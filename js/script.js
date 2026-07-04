@@ -96,7 +96,7 @@ function loadHymnPage() {
 
     if (!hymnNumber) return;
 
-    fetch("DATA/hymns.json")
+    fetch("data/hymns.json")
         .then(response => response.json())
         .then(data => {
 
