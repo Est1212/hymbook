@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Hymn App</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1> Harmony Hymn</h1>
+        <p class="subtitle">
+            Your digital hymn companion
+        </p>
+
+        <input type="text" id="searchBox" placeholder="Search by hymn number or title..." onkeyup="searchHymns()">
+        <div class="menu-btn">
+            ☰
+        </div>
+        <div class="notification-btn">
+            🔔
+        </div>
+
+    </header>
+    <section class="recent">
+
+        <h3>⭐ Recently Opened</h3>
+
+        <div class="recent-card">
+            178 • ONLY AN ARMOUR-BEARER
+        </div>
+
+    </section>
+    <main>
+
+        <h2>All Hymns</h2>
+
+        <div id="hymnList"></div>
+
+    </main>
+
+    </main>
+    <nav class="bottom-nav">
+
+        <a href="#" class="nav-item active">
+            <span class="icon">🏠</span>
+            <span>Home</span>
+        </a>
+
+        <a href="#" class="nav-item">
+            <span class="icon">❤️</span>
+            <span>Favorites</span>
+        </a>
+
+        <a href="#" class="nav-item">
+            <span class="icon">🎼</span>
+            <span>Choir</span>
+        </a>
+
+        <a href="#" class="nav-item">
+            <span class="icon">⚙️</span>
+            <span>Settings</span>
+        </a>
+
+    </nav>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

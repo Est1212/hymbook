@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harmony Hymns</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="hymn-header">
+
+        <button class="back-btn" onclick="goBack()">←</button>
+        <button class="favorite-btn">🤍</button>
+
+        <div class="hymn-info">
+
+            <div class="hymn-number" id="hymnNumber"></div>
+
+            <h1 id="hymnTitle"></h1>
+
+            <p id="hymnInfo"></p>
+
+        </div>
+
+    </header>
+    <section class="card">
+
+        <h2>📖 Lyrics</h2>
+
+        <p id="lyrics"></p>
+
+    </section>
+    <section class="card">
+
+        <h2>🎼 Choir Parts</h2>
+
+        <div class="choir-item" onclick="openPart('soprano')">
+            🎵 Soprano
+            <span>›</span>
+        </div>
+
+        <div class="choir-item" onclick="openPart('tenor')">
+            🎵 Tenor
+            <span>›</span>
+        </div>
+
+        <div class="choir-item" onclick="openPart('tenor')">
+            🎵 Tenor
+            <span>›</span>
+        </div>
+
+        <div class="choir-item" onclick="openPart('bass')">
+            🎵 Bass
+            <span>›</span>
+        </div>
+
+        <script src="js/script.js"></script>
+
+
+</body>
+
+</html>

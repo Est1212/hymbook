@@ -1,0 +1,53 @@
+[
+  {
+    "id": 1,
+    "number": "178",
+    "title": "ONLY AN ARMOUR-BEARER",
+    "lyrics": [
+      "Changvei phungkhamiyawui ot salala,",
+      "Awungawui kahang nganachingra.",
+      "Rai mangashong valuda hanglala;",
+      "Kathanawui kahang ina shurchingra.",
+      "",
+      "Manga muivalu da khavao shala?",
+      "Yanggashibing sanaung serhaora.",
+      "Kachangkhat eina ili chihanra,",
+      "Changvei phungkhamiya ot salala.",
+      "Iwui pangshap katei maleilala,",
+      "Ningtongda Awui kahang nganara.",
+      "",
+      "Rai mangali ili valu jiakha,",
+      "Iwui kazei raikhai samathada,",
+      "Ameina khavao nashung mamanda",
+      "Vaokhareoda ina mangashong zatra.",
+      "",
+      "Rai valala shimli mayonpamlala,",
+      "Awui kahang khangana mi hupta,",
+      "Rai kakup chitharan saman mira,",
+      "Ot kahakna maning, kha ningkasangna."
+    ],
+    "choirParts": {
+      "soprano": {
+        "notes": [
+          "d r m f",
+          "m r d"
+        ],
+        "audio": "audio/178-soprano.mp3"
+      },
+      "alto": {
+        "notes": [
+          "m f s l"
+        ],
+        "audio": "audio/178-alto.mp3"
+      },
+      "tenor": {
+        "notes": [],
+        "audio": "audio/178-tenor.mp3"
+      },
+      "bass": {
+        "notes": [],
+        "audio": "audio/178-bass.mp3"
+      }
+    }
+  }
+]

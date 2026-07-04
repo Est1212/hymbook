@@ -1,0 +1,424 @@
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* BODY */
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #F5EFE6;
+    color: #3E2C23;
+    padding-bottom: 90px;
+}
+
+/* HEADER */
+
+
+header {
+    background: linear-gradient(135deg, #8B5E3C, #5C4033);
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+
+    position: relative;
+}
+
+header h1 {
+    font-size: 32px;
+}
+
+/*SEARCH BAR*/
+
+
+#searchBox {
+
+    width: 90%;
+    display: block;
+
+    margin: 20px auto 0;
+
+    padding: 15px;
+
+    font-size: 18px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    outline: none;
+
+    background: white;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
+}
+
+main {
+    padding: 20px;
+}
+
+h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/*HYMN CARD*/
+
+
+.hymn-card {
+
+    background: #FFF8F0;
+
+    padding: 20px;
+
+    margin-bottom: 18px;
+
+    border-radius: 18px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .08);
+
+}
+
+.hymn-card:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 10px 22px rgba(0, 0, 0, .15);
+
+}
+
+main {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+p {
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+hr {
+    margin: 30px 0;
+}
+
+h3 {
+    color: #5C4033;
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    margin-top: 8px;
+    opacity: 0.9;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+
+.number {
+
+    background: #8B5E3C;
+
+    color: white;
+
+    width: 70px;
+
+    height: 70px;
+
+    border-radius: 18px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 24px;
+
+    font-weight: 600;
+
+}
+
+.title {
+
+    flex: 1;
+
+    margin-left: 20px;
+
+    font-size: 24px;
+
+    font-weight: 500;
+
+}
+
+.arrow {
+
+    font-size: 40px;
+
+    color: #8B5E3C;
+
+}
+
+/* Bottom Navigation */
+
+.bottom-nav {
+
+    position: fixed;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    background: #FFF8F0;
+
+    display: flex;
+
+    justify-content: space-around;
+
+    align-items: center;
+
+    padding: 15px 0;
+
+    box-shadow: 0 -3px 10px rgba(0, 0, 0, .1);
+
+    border-top-left-radius: 20px;
+
+    border-top-right-radius: 20px;
+
+}
+
+.nav-item {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-decoration: none;
+
+    color: #8B5E3C;
+
+    font-size: 14px;
+
+    transition: .3s;
+
+}
+
+.icon {
+
+    font-size: 24px;
+
+    margin-bottom: 5px;
+
+}
+
+.nav-item:hover {
+
+    color: #5C4033;
+
+    transform: translateY(-3px);
+
+}
+
+.active {
+
+    font-weight: bold;
+
+}
+
+.menu-btn {
+
+    position: absolute;
+
+    left: 25px;
+
+    top: 30px;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+}
+
+.notification-btn {
+
+    position: absolute;
+
+    right: 25px;
+
+    top: 30px;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+}
+
+.recent {
+
+    margin-bottom: 30px;
+
+}
+
+.recent-card {
+
+    background: #FFF8F0;
+
+    padding: 18px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .08);
+
+}
+
+.hymn-header {
+    background: linear-gradient(135deg, #8B5E3C, #5C4033);
+    color: white;
+    padding: 30px 20px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    position: relative;
+    text-align: center;
+}
+
+/* =========================
+   HYMN PAGE
+========================= */
+
+.hymn-header {
+    background: linear-gradient(135deg, #8B5E3C, #5C4033);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    position: relative;
+}
+
+.back-btn,
+.favorite-btn {
+
+    position: absolute;
+
+    top: 25px;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: white;
+
+    cursor: pointer;
+
+    font-size: 20px;
+
+    transition: 0.3s;
+}
+
+.back-btn {
+    left: 20px;
+}
+
+.favorite-btn {
+    right: 20px;
+}
+
+.back-btn:hover,
+.favorite-btn:hover {
+
+    transform: scale(1.1);
+
+}
+
+.hymn-number {
+
+    width: 70px;
+    height: 70px;
+
+    background: white;
+
+    color: #8B5E3C;
+
+    border-radius: 50%;
+
+    margin: 20px auto;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 26px;
+
+    font-weight: bold;
+
+}
+
+.card {
+
+    background: #FFF8F0;
+
+    margin: 20px;
+
+    padding: 20px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .08);
+
+}
+
+.choir-item {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 16px;
+
+    margin-top: 12px;
+
+    background: white;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+.choir-item:hover {
+
+    background: #F5EFE6;
+
+    transform: translateX(5px);
+
+}
