@@ -49,7 +49,7 @@ function loadHomePage() {
 
     if (!hymnList) return;
 
-    fetch("DATA/hymns.json")
+    fetch("data/hymns.json")
         .then(response => response.json())
         .then(hymns => {
 
@@ -143,7 +143,7 @@ function loadPartPage() {
 
     if (!partNotes) return;
 
-    fetch("DATA/hymns.json")
+    fetch("data/hymns.json")
         .then(response => response.json())
         .then(data => {
 
