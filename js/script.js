@@ -102,7 +102,7 @@ function loadHymnPage() {
 
             const selectedHymn = localStorage.getItem("selectedHymn");
 
-            const hymn = data.find(item => item.id == selectedHymn);
+            const hymn = Data.find(item => item.id == selectedHymn);
 
             if (!hymn) return;
 
