@@ -282,8 +282,8 @@ function loadPartPage() {
             document.getElementById("partName").textContent =
                 part.charAt(0).toUpperCase() + part.slice(1);
 
-            partNotes.innerHTML =
-                hymn.choirParts[part].notes.join("<br><br>");
+            partNotes.textContent =
+                hymn.choirParts[part].notes.join("\n");
 
         });
 

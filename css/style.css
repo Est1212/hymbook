@@ -472,3 +472,18 @@ h3 {
     outline: none;
 
 }
+
+.solfa {
+    background: #111;
+    color: white;
+
+    padding: 20px;
+    border-radius: 18px;
+
+    font-family: "Courier New", monospace;
+    font-size: 17px;
+    line-height: 1.8;
+
+    white-space: pre-wrap;
+    overflow-x: auto;
+}
