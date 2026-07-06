@@ -110,6 +110,7 @@ function loadHymnPage() {
             document.getElementById("hymnTitle").textContent = hymn.title;
             document.getElementById("hymnInfo").textContent =
                 `Key: ${hymn.key} • Time: ${hymn.timeSignature}`;
+            document.getElementById("keySelect").value = hymn.key;
 
             document.getElementById("lyrics").innerHTML =
                 hymn.lyrics.join("<br><br>");
