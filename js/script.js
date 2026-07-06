@@ -45,25 +45,53 @@ const noteFrequencies = {
     "B": 493.88
 };
 
+// ===========================
+// Play Note
+// ===========================
+
+const NOTE_DURATION = 4; // seconds
+
 function playFrequency(frequency) {
+
+    if (audioContext.state === "suspended") {
+        audioContext.resume();
+    }
+
+    const now = audioContext.currentTime;
 
     const osc = audioContext.createOscillator();
     const gain = audioContext.createGain();
 
+    // Warmer sound
     osc.type = "triangle";
-    osc.frequency.setValueAtTime(frequency, audioContext.currentTime);
+    osc.frequency.setValueAtTime(frequency, now);
 
-    gain.gain.setValueAtTime(0.25, audioContext.currentTime);
-    gain.gain.exponentialRampToValueAtTime(
-        0.001,
-        audioContext.currentTime + 0.8
-    );
-
+    // Connect
     osc.connect(gain);
     gain.connect(audioContext.destination);
 
-    osc.start();
-    osc.stop(audioContext.currentTime + 0.8);
+    // ADSR Envelope
+
+    // Start silent
+    gain.gain.setValueAtTime(0, now);
+
+    // Attack (fade in)
+    gain.gain.linearRampToValueAtTime(0.35, now + 0.05);
+
+    // Decay
+    gain.gain.linearRampToValueAtTime(0.25, now + 0.30);
+
+    // Sustain
+    gain.gain.setValueAtTime(0.25, now + NOTE_DURATION - 0.5);
+
+    // Release (fade out)
+    gain.gain.exponentialRampToValueAtTime(
+        0.0001,
+        now + NOTE_DURATION
+    );
+
+    osc.start(now);
+    osc.stop(now + NOTE_DURATION);
 
 }
 async function setupKeySelector() {
@@ -112,10 +140,7 @@ function loadKeySelector() {
 
     });
 
-    // TEST
-    keySelect.onchange = function () {
-        alert("Changed to " + this.value);
-    };
+
 }
 
 // ===========================
