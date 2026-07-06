@@ -78,7 +78,6 @@ function playFrequency(frequency) {
 
 }
 
-}
 async function setupKeySelector() {
 
     const keySelect = document.getElementById("keySelect");
