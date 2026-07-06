@@ -87,7 +87,7 @@ async function setupKeySelector() {
     });
 
 }
-}
+
 
 // ===========================
 // Load Key Selector
