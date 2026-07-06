@@ -112,6 +112,10 @@ function loadKeySelector() {
 
     });
 
+    // TEST
+    keySelect.onchange = function () {
+        alert("Changed to " + this.value);
+    };
 }
 
 // ===========================
