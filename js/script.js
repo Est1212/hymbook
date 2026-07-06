@@ -23,6 +23,64 @@ const musicalKeys = [
     { value: "Bb", label: "B♭" },
     { value: "B", label: "B" }
 ];
+// ===========================
+// Sound Engine
+// ===========================
+
+const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+const audioContext = new AudioContextClass();
+
+const noteFrequencies = {
+    "C": 261.63,
+    "Db": 277.18,
+    "D": 293.66,
+    "Eb": 311.13,
+    "E": 329.63,
+    "F": 349.23,
+    "Gb": 369.99,
+    "G": 392.00,
+    "Ab": 415.30,
+    "A": 440.00,
+    "Bb": 466.16,
+    "B": 493.88
+};
+
+function playFrequency(frequency) {
+
+    const oscillator = audioContext.createOscillator();
+    const gain = audioContext.createGain();
+
+    oscillator.type = "sine";   // Later we can change to piano-like sounds
+    oscillator.frequency.value = frequency;
+
+    gain.gain.setValueAtTime(0.25, audioContext.currentTime);
+    gain.gain.exponentialRampToValueAtTime(
+        0.0001,
+        audioContext.currentTime + 0.8
+    );
+
+    oscillator.connect(gain);
+    gain.connect(audioContext.destination);
+
+    oscillator.start();
+    oscillator.stop(audioContext.currentTime + 0.8);
+
+}
+function setupKeySelector() {
+
+    const keySelect = document.getElementById("keySelect");
+
+    if (!keySelect) return;
+
+    keySelect.addEventListener("change", () => {
+
+        const key = keySelect.value;
+
+        playFrequency(noteFrequencies[key]);
+
+    });
+
+}
 
 // ===========================
 // Load Key Selector
@@ -217,6 +275,8 @@ function loadPartPage() {
 document.addEventListener("DOMContentLoaded", () => {
 
     loadKeySelector();
+
+    setupKeySelector();
 
     loadHomePage();
 
