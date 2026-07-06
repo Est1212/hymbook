@@ -47,39 +47,46 @@ const noteFrequencies = {
 
 function playFrequency(frequency) {
 
-    const oscillator = audioContext.createOscillator();
+    const osc = audioContext.createOscillator();
     const gain = audioContext.createGain();
 
-    oscillator.type = "sine";   // Later we can change to piano-like sounds
-    oscillator.frequency.value = frequency;
+    osc.type = "triangle";
+    osc.frequency.setValueAtTime(frequency, audioContext.currentTime);
 
     gain.gain.setValueAtTime(0.25, audioContext.currentTime);
     gain.gain.exponentialRampToValueAtTime(
-        0.0001,
+        0.001,
         audioContext.currentTime + 0.8
     );
 
-    oscillator.connect(gain);
+    osc.connect(gain);
     gain.connect(audioContext.destination);
 
-    oscillator.start();
-    oscillator.stop(audioContext.currentTime + 0.8);
+    osc.start();
+    osc.stop(audioContext.currentTime + 0.8);
 
 }
-function setupKeySelector() {
+async function setupKeySelector() {
 
     const keySelect = document.getElementById("keySelect");
 
     if (!keySelect) return;
 
-    keySelect.addEventListener("change", () => {
+    keySelect.addEventListener("change", async () => {
+
+        if (audioContext.state !== "running") {
+            await audioContext.resume();
+        }
 
         const key = keySelect.value;
+
+        console.log("Selected Key:", key);
 
         playFrequency(noteFrequencies[key]);
 
     });
 
+}
 }
 
 // ===========================
