@@ -57,41 +57,26 @@ function playFrequency(frequency) {
         audioContext.resume();
     }
 
-    const now = audioContext.currentTime;
-
     const osc = audioContext.createOscillator();
     const gain = audioContext.createGain();
 
-    // Warmer sound
-    osc.type = "triangle";
-    osc.frequency.setValueAtTime(frequency, now);
+    const now = audioContext.currentTime;
 
-    // Connect
+    osc.type = "triangle";
+    osc.frequency.value = frequency;
+
     osc.connect(gain);
     gain.connect(audioContext.destination);
 
-    // ADSR Envelope
-
-    // Start silent
-    gain.gain.setValueAtTime(0, now);
-
-    // Attack (fade in)
-    gain.gain.linearRampToValueAtTime(0.35, now + 0.05);
-
-    // Decay
-    gain.gain.linearRampToValueAtTime(0.25, now + 0.30);
-
-    // Sustain
-    gain.gain.setValueAtTime(0.25, now + NOTE_DURATION - 0.5);
-
-    // Release (fade out)
-    gain.gain.exponentialRampToValueAtTime(
-        0.0001,
-        now + NOTE_DURATION
-    );
+    // Start immediately
+    gain.gain.setValueAtTime(0.3, now);
 
     osc.start(now);
-    osc.stop(now + NOTE_DURATION);
+
+    // Stop after exactly 1 second
+    osc.stop(now + 1);
+
+}
 
 }
 async function setupKeySelector() {
