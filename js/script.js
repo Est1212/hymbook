@@ -49,7 +49,7 @@ const noteFrequencies = {
 // Play Note
 // ===========================
 
-const NOTE_DURATION = 6; // seconds
+const NOTE_DURATION = 4; // seconds
 
 function playFrequency(frequency) {
 
