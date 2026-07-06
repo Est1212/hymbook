@@ -213,8 +213,15 @@ function loadPartPage() {
 // ===========================
 // Start the App
 // ===========================
-loadKeySelector();
 
-loadHomePage();
-loadHymnPage();
-loadPartPage();
+document.addEventListener("DOMContentLoaded", () => {
+
+    loadKeySelector();
+
+    loadHomePage();
+
+    loadHymnPage();
+
+    loadPartPage();
+
+});
