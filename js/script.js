@@ -1,9 +1,53 @@
+
 // ===========================
 // Global Variables
 // ===========================
 
 let allHymns = [];
 
+// ===========================
+// Musical Keys
+// ===========================
+
+const musicalKeys = [
+    { value: "C", label: "C" },
+    { value: "Db", label: "D♭" },
+    { value: "D", label: "D" },
+    { value: "Eb", label: "E♭" },
+    { value: "E", label: "E" },
+    { value: "F", label: "F" },
+    { value: "Gb", label: "G♭" },
+    { value: "G", label: "G" },
+    { value: "Ab", label: "A♭" },
+    { value: "A", label: "A" },
+    { value: "Bb", label: "B♭" },
+    { value: "B", label: "B" }
+];
+
+// ===========================
+// Load Key Selector
+// ===========================
+
+function loadKeySelector() {
+
+    const keySelect = document.getElementById("keySelect");
+
+    if (!keySelect) return;
+
+    keySelect.innerHTML = "";
+
+    musicalKeys.forEach(key => {
+
+        const option = document.createElement("option");
+
+        option.value = key.value;
+        option.textContent = key.label;
+
+        keySelect.appendChild(option);
+
+    });
+
+}
 
 // ===========================
 // Home Page
@@ -169,6 +213,7 @@ function loadPartPage() {
 // ===========================
 // Start the App
 // ===========================
+loadKeySelector();
 
 loadHomePage();
 loadHymnPage();
