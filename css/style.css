@@ -275,21 +275,16 @@ h3 {
 }
 
 .recent {
-
-    margin-bottom: 30px;
-
+    max-width: 900px;
+    margin: 0 auto 30px;
+    padding: 0 20px;
 }
 
 .recent-card {
-
     background: #FFF8F0;
-
-    padding: 18px;
-
+    padding: 14px 18px;
     border-radius: 15px;
-
     box-shadow: 0 4px 10px rgba(0, 0, 0, .08);
-
 }
 
 .hymn-header {
