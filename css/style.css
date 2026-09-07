@@ -486,3 +486,38 @@ h3 {
     white-space: pre-wrap;
     overflow-x: auto;
 }
+
+/* =========================
+   DESKTOP SIDE NAVIGATION
+========================= */
+
+@media (min-width: 768px) {
+
+    .bottom-nav {
+        top: 0;
+        bottom: 0;
+        left: 0;
+
+        width: 90px;
+        height: 100vh;
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        padding: 20px 0;
+
+        border-radius: 0 20px 20px 0;
+
+        box-shadow: 3px 0 10px rgba(0, 0, 0, .1);
+    }
+
+    .nav-item {
+        margin: 20px 0;
+    }
+
+    body {
+        padding-bottom: 0;
+        padding-left: 90px;
+    }
+}
