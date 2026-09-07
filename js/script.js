@@ -236,7 +236,7 @@ function loadHymnPage() {
 
             document.getElementById("lyrics").innerHTML =
                 hymn.lyrics.join("<br><br>");
-
+            updateFavoriteButton();
         });
 
 }
