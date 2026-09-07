@@ -206,6 +206,56 @@ function searchHymns() {
     displayHymns(filtered);
 
 }
+// ===========================
+// Favorites
+// ===========================
+
+function toggleFavorite() {
+
+    const hymnId = localStorage.getItem("selectedHymn");
+
+    if (!hymnId) return;
+
+    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+    if (favorites.includes(hymnId)) {
+
+        // Remove from favorites
+        favorites = favorites.filter(id => id !== hymnId);
+
+    } else {
+
+        // Add to favorites
+        favorites.push(hymnId);
+
+    }
+
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+
+    updateFavoriteButton();
+}
+
+function updateFavoriteButton() {
+
+    const button = document.querySelector(".favorite-btn");
+
+    if (!button) return;
+
+    const hymnId = localStorage.getItem("selectedHymn");
+
+    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+    if (favorites.includes(hymnId)) {
+
+        button.textContent = "❤️";
+
+    } else {
+
+        button.textContent = "🤍";
+
+    }
+
+}
 
 
 // ===========================
