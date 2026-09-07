@@ -290,7 +290,60 @@ function loadHymnPage() {
         });
 
 }
+// ===========================
+// Favorites Page
+// ===========================
 
+function loadFavoritesPage() {
+
+    const favoriteList = document.getElementById("favoriteList");
+
+    if (!favoriteList) return;
+
+    const favorites =
+        JSON.parse(localStorage.getItem("favorites")) || [];
+
+    fetch("data/hymns.json")
+        .then(response => response.json())
+        .then(data => {
+
+            const favoriteHymns = data.filter(hymn =>
+                favorites.includes(String(hymn.id))
+            );
+
+            if (favoriteHymns.length === 0) {
+
+                favoriteList.innerHTML = `
+                    <div class="card">
+                        <p>You haven't added any favorite hymns yet. ❤️</p>
+                    </div>
+                `;
+
+                return;
+            }
+
+            favoriteList.innerHTML = "";
+
+            favoriteHymns.forEach(hymn => {
+
+                favoriteList.innerHTML += `
+                    <div class="hymn-card"
+                         onclick="openHymn(${hymn.id})">
+
+                        <div class="number">${hymn.number}</div>
+
+                        <div class="title">${hymn.title}</div>
+
+                        <div class="arrow">›</div>
+
+                    </div>
+                `;
+
+            });
+
+        });
+
+}
 
 // ===========================
 // Navigation & choir part
@@ -354,4 +407,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     loadPartPage();
 
+    loadFavoritesPage();
 });
